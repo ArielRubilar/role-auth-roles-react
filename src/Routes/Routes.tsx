@@ -21,7 +21,7 @@ export const AppRoutes = () => {
                         </Route>
                     </Route>
                 </Route>
-                <Route path="*" element={<>Not Found</>}></Route>
+                <Route path="*" element={<>  Not Found </>}></Route>
             </Routes>
         </BrowserRouter>
     );

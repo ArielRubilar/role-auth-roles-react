@@ -1,6 +1,5 @@
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
-import { Controls } from './Controls';
 
 export const Login = () => {
     const { setIsAuth, isAuth } = useAuth();
@@ -8,10 +7,9 @@ export const Login = () => {
     if (isAuth) return <Navigate to={'/'}/>;
 
     return (
-        <div>
+        <div style={({ marginInline: 'auto', marginTop: 'var(--size-7)' })}>
             <h1>Login</h1>
             <button onClick={() => { setIsAuth(true); }}>Login</button>
-            <Controls/>
         </div>
     );
 };
