@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+  
+      /* Linting */
+      "strict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noFallthroughCasesInSwitch": true
+    },
+    "extends": "./tsconfig.node.json",
+    "include": ["src", ".eslintrc.cjs"],
+  }

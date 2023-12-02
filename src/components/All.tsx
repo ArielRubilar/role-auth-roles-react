@@ -1,11 +1,12 @@
-import { Controls } from "./Controls"
+import { Controls } from './Controls';
 
 export const All = () => {
-
     return (
         <div>
             <h2>All</h2>
             <Controls/>
-        </div>  
-    )
-}
+        </div>
+    );
+};
+
+export default All;

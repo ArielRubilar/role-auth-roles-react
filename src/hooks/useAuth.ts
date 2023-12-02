@@ -1,16 +1,23 @@
-import { create } from "zustand"
+import { create } from 'zustand';
 
+export type Role = 'ADMIN' | 'PERSON'
 
-export const useAuth = create<{isAuth: boolean, role:'ADMIN'|'PERSON', setIsAuth: (value: boolean) => void , setIsRole: (value: 'ADMIN'|'PERSON') => void  }>((set) => ({
+interface AuthState {
+    isAuth: boolean
+    role: Role
+    setIsAuth: (value: boolean) => void
+    setIsRole: (value: Role) => void
+}
+
+export const useAuth = create<AuthState>((set) => ({
     isAuth: Boolean(localStorage.getItem('token')),
     role: 'ADMIN',
-    setIsAuth: (value: boolean) => set(() => {
-        if(value) localStorage.setItem('token', 'true')
-        if(!value) localStorage.removeItem('token')
-        return { isAuth: value }
-    }
-        
-    ),
-    setIsRole: (value: 'ADMIN'|'PERSON') => set(() => ({ role: value })),
-}))
-
+    setIsAuth: (value: boolean) => {
+        set(() => {
+            if (value) localStorage.setItem('token', 'true');
+            if (!value) localStorage.removeItem('token');
+            return { isAuth: value };
+        });
+    },
+    setIsRole: (value: Role) => { set(() => ({ role: value })); },
+}));

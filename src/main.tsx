@@ -1,10 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import { AppRoutes } from './Routes.tsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import { AppRoutes } from './Routes/Routes.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <AppRoutes/>
-  </React.StrictMode>,
-)
+    <React.StrictMode>
+        <AppRoutes/>
+    </React.StrictMode>
+);
